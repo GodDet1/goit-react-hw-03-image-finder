@@ -1,5 +1,6 @@
 import { BackDrop, ModalWindow } from './styled.module';
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 export default class Modal extends Component {
   componentDidMount() {
@@ -23,7 +24,6 @@ export default class Modal extends Component {
   };
 
   render() {
-    console.log(this.props.data);
     return (
       <BackDrop className="overlay" onClick={this.handleBackdropclick}>
         <ModalWindow className="modal">
@@ -37,3 +37,11 @@ export default class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  close: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    largeImageURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+  }),
+};

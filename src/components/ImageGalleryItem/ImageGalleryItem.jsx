@@ -2,22 +2,27 @@ import { PropTypes } from 'prop-types';
 import React from 'react';
 import { MyImg, MyListItem } from './styled.module';
 
-function ImageGalleryItem({ dataImage, handleId }) {
-  return dataImage.map(item => (
+function ImageGalleryItem({ item: { id, webformatURL, tags }, handleId }) {
+  return (
     <MyListItem
-      key={item.id}
       className="gallery-item"
       onClick={() => {
-        handleId(item.id);
+        handleId(id);
       }}
     >
-      <MyImg src={item.webformatURL} alt={item.tags} width="362" />
+      <MyImg src={webformatURL} alt={tags} width="362" />
     </MyListItem>
-  ));
+  );
 }
 
 ImageGalleryItem.propTypes = {
-  dataImage: PropTypes.arrayOf(PropTypes.shape({})),
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    webformatURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+  }),
+
+  handleId: PropTypes.func.isRequired,
 };
 
 export default ImageGalleryItem;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { fetchData } from 'services/API';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
@@ -99,12 +98,10 @@ export default class App extends Component {
           onSubmit={this.handleSubmit}
           inputText={this.state.inputText}
         />
-        <ImageGallery>
-          <ImageGalleryItem
-            dataImage={this.state.data}
-            handleId={this.handleModalOpen}
-          />
-        </ImageGallery>
+        <ImageGallery
+          dataImage={this.state.data}
+          handleId={this.handleModalOpen}
+        />
 
         {this.state.loader && <Loader />}
 
