@@ -20,7 +20,6 @@ export default class SearchBar extends Component {
           className="form"
           onSubmit={e => {
             this.props.onSubmit(e, this.state.text.trim());
-            this.setState({ text: '' });
           }}
         >
           <MyBtn type="submit" className="button">
