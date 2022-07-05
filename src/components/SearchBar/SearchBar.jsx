@@ -1,12 +1,6 @@
 import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
-import {
-  MyBtn,
-  MyBtnLabel,
-  MyForm,
-  MyInput,
-  MySearchBar,
-} from './styled.module';
+import { MyBtn, MyForm, MyInput, MySearchBar } from './styled.module';
 
 import iconFind from '../../image/search.svg';
 

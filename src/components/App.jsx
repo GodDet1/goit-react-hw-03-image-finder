@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bars } from 'react-loader-spinner';
+
 import { fetchData } from 'services/API';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
